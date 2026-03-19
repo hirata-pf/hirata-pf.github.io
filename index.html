@@ -4,24 +4,48 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>平田大樹のポートフォリオサイト</title>
-    <link
-  rel="stylesheet"
-  href="https://cdn.jsdelivr.net/npm/destyle.css@1.0.15/destyle.css"
-/>
+    <link rel="stylesheet" href="css/reset.css"/>
+    <link rel="stylesheet" href="css/style.css"/>
 </head>
 <body>
-    <header>
-        <nav>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
+    <header class="Header">
+        <!-- SP表示-Naviここから- -->
+        <nav class="SpMenu">
+            <button class="Button">
+                <div class="ButtonLine_Top"></div>
+                <div class="ButtonLine_Middum"></div>
+                <div class="ButtonLine_Bottom"></div>
+            </button>
+             <ul role="list" class="SpNavi">
+                <li class="MenuList_Item">
+                    <a href="#" class="MenuList_Itemlink">テスト1</a>
+                </li>
+                <li class="MenuList_Item">
+                    <a href="#" class="MenuList_Itemlink">テスト2</a>
+                </li>
+                <li class="MenuList_Item">
+                    <a href="#" class="MenuList_Itemlink">テスト3</a>
+                </li>
+            </ul>
         </nav>
+        <!-- SP表示-Naviここまで- -->
     </header>
     <main>
-        <h1>ポートフォリオ構築中です</h1>
+        <h1>ポートフォリオ構築中</h1>
     </main>
     <footer></footer>
+<!-- JS -->
+<script>
+  const menu = document.querySelector(".SpMenu")
+  const button = document.querySelector(".Button")
+
+  const SptoggleMenu = () => {
+    menu.classList.toggle("MenuIsOpen")
+  }
+
+  button.addEventListener("click", () => {
+    toggleSpMenu()
+  })
+</script>
 </body>
 </html>
