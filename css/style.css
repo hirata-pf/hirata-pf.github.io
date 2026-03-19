@@ -1,0 +1,60 @@
+/* 共通 */
+body {
+    background-color: #bebebe;
+}
+a {
+    text-decoration: none;
+}
+/* ============== */
+/* ヘッダー */
+
+/* ヘッダーSP */
+.SpMenu {
+    padding: clamp(20px, 1.5vw + 15px, 25px);
+}
+.SpNavi {
+    width: 80%;
+    max-width: 400px;
+    background-color: #fff;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    right: 0;
+    transform: translateX(100%);
+}
+.SpNavi > li {
+    margin-bottom: 1em;
+}
+/* オープンクローズボタン */
+.Button {
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 30;
+    height: 60px;
+    padding-left: 10px;
+    padding-right: 20px;
+}
+.ButtonLine_Top {
+    position: absolute;
+    top: 15px;
+    width: 40px;
+    height: 3px;
+    background-color: #fff;
+}
+.ButtonLine_Middum {
+    width: 40px;
+    height: 3px;
+    background-color: #fff;
+}
+.ButtonLine_Bottom {
+    position: absolute;
+    bottom: 15px;
+    width: 40px;
+    height: 3px;
+    background-color: #fff;
+}
+/* 開閉 */
+.MenuIsOpen {
+    transform: translateX(0);
+}

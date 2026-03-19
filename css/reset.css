@@ -1,0 +1,82 @@
+/* ==========================================================================
+   2026 Modern Reset
+   ========================================================================== */
+
+/* 1. ボックスモデルの修正
+   デフォルトでは「パディングや枠線」を足すと要素が外側に膨らみますが、
+   これを指定することで「指定した幅の中にすべて収まる」ようになり、
+   レイアウト計算が圧倒的に楽になります。 */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+/* 2. ブラウザ固有の外余白（margin）をリセット
+   ブラウザが勝手につける「h1はこれくらい空ける」といった余白を一度0にします。
+   これにより、自分の意図しない隙間に悩まされることがなくなります。 */
+body, h1, h2, h3, h4, p, figure, blockquote, dl, dd {
+  margin: 0;
+}
+
+/* 3. リストの制御（アクセシビリティ配慮型）
+   role="list" と書いたリストだけ、ポッチ（中黒）と内余白を消します。
+   メニューバーなど「見た目を変えたいけど、構造はリストとして残したい」
+   という現代のWeb標準に合わせた書き方です。 */
+ul[role="list"], ol[role="list"] {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* 4. スムーズスクロール
+   ページ内リンクをクリックした際、パッと切り替わるのではなく
+   「スルスルッ」と滑らかに移動するようにします。 */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+/* 5. 画面の高さと文字の読みやすさ
+   - min-height: 画面いっぱいの高さを最低限確保します。
+   - text-rendering: 文字を綺麗に描画する設定です。
+   - -webkit-font-smoothing: Macなどの高精細ディスプレイで文字を滑らかに見せます。 */
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* 6. 画像のレスポンシブ対応
+   画像が親要素（スマホ画面など）からはみ出すのを防ぎます。
+   display: block は、画像の下にできる数ピクセルの「謎の隙間」を消す魔法です。 */
+img, picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* 7. フォーム要素のフォント継承
+   ボタンや入力欄は、放っておくとブラウザ独自のダサいフォントになります。
+   これを書くことで、周りの文字と同じフォントが使われるようになります。 */
+input, button, textarea, select {
+  font: inherit;
+}
+
+/* 8. リンクの基本設定
+   色を親要素から引き継ぐ（inherit）ことで、突然青色になるのを防ぎます。
+   下線は残りますが、文字に被らないよう綺麗に調整されます。 */
+a {
+  color: inherit;
+  text-decoration-skip-ink: auto;
+}
+
+/* 9. アニメーション配慮（アクセシビリティ）
+   OSの設定で「動きを抑えたい」としているユーザーに対して、
+   激しいアニメーションやスクロールを無効化する、優しい設定です。 */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
