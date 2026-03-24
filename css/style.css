@@ -1,4 +1,4 @@
-/* ============== */
+/* ============================ */
 /* 共通 */
 body {
     background-color: #bebebe;
@@ -6,8 +6,44 @@ body {
 a {
     text-decoration: none;
 }
-/* ============== */
+button {
+    background: none;
+    border: none;
+}
+.conts_1,
+.conts_2,
+.conts_3,
+.conts_4,
+.conts_5,
+.conts_6 {
+    height: 1000px;
+    background-color: rgb(148, 148, 148);
+    margin-block: 2em;
+}
+
+/* ============================ */
 /* ヘッダー */
+.Header {
+    width: 100%;
+}
+/* ヘッダーPC */
+.logo,
+.HeaderEmpty {
+    flex: 1;
+}
+.HeaderEmpty {
+    display: block;
+}
+.PcMenu {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    width: 100%;
+}
+.PcNavi {
+    display: flex;
+    gap: 30px;
+}
 /* ヘッダーSP */
 .SpMenu {
     padding: clamp(20px, 1.5vw + 15px, 25px);
@@ -21,6 +57,7 @@ a {
     top: 0;
     right: 0;
     transform: translateX(100%);
+    transition: all 0.3s;
 }
 .SpNavi > li {
     margin-bottom: 1em;
@@ -58,10 +95,37 @@ a {
 .MenuIsOpen .SpNavi {
     transform: translateX(0);
 }
-/* ============== */
-/* ============== */
-/* ============== */
-/* ============== */
-/* ============== */
-/* ============== */
-/* ============== */
+.MenuIsOpen .ButtonLine_Top {
+    top: 50%; /* 中央に寄せる */
+    transform: translateY(-50%) rotate(45deg);
+    transition: transform 0.3s;
+}
+.MenuIsOpen .ButtonLine_Middum {
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.MenuIsOpen .ButtonLine_Bottom {
+    bottom: 50%; /* 中央に寄せる */
+    transform: translateY(50%) rotate(-45deg);
+    transition: transform 0.3s;
+}
+
+/* PC表示（1024px以上）の時 */
+@media (min-width: 1024px) {
+    .SpMenu {
+        display: none;
+    }
+}
+/* PC表示（1024px以上）の時 */
+@media (max-width: 1023px) {
+    .PcMenu {
+        display: none;
+    }
+}
+
+/* ============================ */
+/* ============================ */
+/* ============================ */
+/* ============================ */
+/* ============================ */
