@@ -9,8 +9,18 @@
 </head>
 <body>
     <header class="Header">
+        <nav class="PcMenu">
+            <h1 class="logo">ここにろご</h1>
+            <ul role="list" class="PcNavi">
+                <li><a href="#linktest1">アイテム１</a></li>
+                <li><a href="#linktest2">アイテム２</a></li>
+                <li><a href="#linktest3">アイテム３</a></li>
+            </ul>
+            <div class="HeaderEmpty"></div>
+        </nav>
         <!-- SP表示-Naviここから- -->
         <nav class="SpMenu">
+            <h1 class="logo">ここにろご</h1>
             <button class="Button">
                 <div class="ButtonLine_Top"></div>
                 <div class="ButtonLine_Middum"></div>
@@ -18,34 +28,52 @@
             </button>
              <ul role="list" class="SpNavi">
                 <li class="MenuList_Item">
-                    <a href="#" class="MenuList_Itemlink">テスト1</a>
+                    <a href="#linktest1" class="MenuList_Itemlink">テスト1</a>
                 </li>
                 <li class="MenuList_Item">
-                    <a href="#" class="MenuList_Itemlink">テスト2</a>
+                    <a href="#linktest2" class="MenuList_Itemlink">テスト2</a>
                 </li>
                 <li class="MenuList_Item">
-                    <a href="#" class="MenuList_Itemlink">テスト3</a>
+                    <a href="#linktest3" class="MenuList_Itemlink">テスト3</a>
                 </li>
             </ul>
         </nav>
         <!-- SP表示-Naviここまで- -->
     </header>
     <main>
-        <h1>ポートフォリオ構築中</h1>
+        <div class="conts_1"></div>
+        <div class="conts_2"></div>
+        <div class="conts_3"></div>
+        <div class="conts_4" id="linktest1"></div>
+        <div class="conts_5" id="linktest2"></div>
+        <div class="conts_6" id="linktest3"></div>
     </main>
     <footer></footer>
 <!-- JS -->
+<!-- SPヘッダーに関するJS -->
 <script>
-  const menu = document.querySelector(".SpMenu")
-  const button = document.querySelector(".Button")
+  const menu = document.querySelector(".SpMenu");
+  const button = document.querySelector(".Button");
+  // メニュー内のリンクをすべて取得する
+  const menuLinks = document.querySelectorAll(".MenuList_Itemlink");
 
+  // メニューを開閉する関数
   const toggleSpMenu = () => {
-    menu.classList.toggle("MenuIsOpen")
-  }
+    menu.classList.toggle("MenuIsOpen");
+  };
 
+  // ボタンクリックで開閉
   button.addEventListener("click", () => {
-    toggleSpMenu()
-  })
+    toggleSpMenu();
+  });
+
+  // 【追加】リンクをクリックした時にメニューを閉じる処理
+  menuLinks.forEach((link) => {
+    link.addEventListener("click", () => {
+      // メニューが開いている（MenuIsOpenがついている）ときだけクラスを外す
+      menu.classList.remove("MenuIsOpen");
+    });
+  });
 </script>
 </body>
 </html>
