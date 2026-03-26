@@ -123,9 +123,151 @@ button {
         display: none;
     }
 }
+/* ============================ */
+/* Mv */
+.Mv {
+    width: 100vw;
+    height: 100vh;
+    background-image: url('../images/Mv.JPG');
+    background-size: cover;      /* 画像を隙間なく広げる */
+    background-position: center;  /* 画像の中央を表示 */
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .MvContainer {
+        padding: clamp(30px, 5vw, 60px) clamp(40px, 8vw, 80px);
+        background-color: rgba(255, 255, 255, 0.2);
+        backdrop-filter: blur(10px); /* 10px分、下の画像をぼかす */
+        -webkit-backdrop-filter: blur(10px); /* Safari対策 */
+    }
+}
+/* ============================ */
+/* OverViews */
+.OverViewsContainer {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    max-width: 850px;
+    width: 90%;
+    margin-inline: auto;
+}
+.OverViews-img {
+    width: 40%;
+    object-fit: cover;
+    max-width: 400px;
+}
+.OverViews-tx {
+    flex: 1;
+}
+/* ============================ */
+/* Works */
+.WorksList {
+    display: flex;
+    flex-wrap: wrap;
+    border-top: 1px solid #000;  /* 上側の線 */
+
+    .WorksItem {
+        width: 33.333%; /* 3列 */
+        box-sizing: border-box;
+        border-right: 1px solid #000;
+        border-bottom: 1px solid #000;
+        .WorksCard {
+            display: block;
+            transition: background-color 0.3s;
+            height: 100%;
+            position: relative;
+            padding: 44px;
+            .WorksImgWrapper {
+                .WorksImg {
+                    
+                }
+            }
+        }
+        .WorksContent {
+            margin-top: 40px;
+            .WorksTitle {
+                font-size-adjust: calc();
+            }
+            .WorksTag {
+
+            }
+            .WorksArrow {
+                position: absolute;
+                bottom: 20px;
+                right: 20px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                transition: transform 0.3s ease;
+                &::after {
+                    content: "";
+                    width: 10px;
+                    height: 10px;
+                    border-top: 2px solid #000;
+                    border-right: 2px solid #000;
+                    transform: rotate(45deg);
+                    display: block;
+                }
+            }
+        }
+    }
+
+}
+
+/* 【演出】カードをホバーした時に矢印を少し右に動かす */
+.WorksCard:hover .WorksArrow {
+    transform: translateX(5px); /* 右に5pxピコッと動く */
+}
+
+/* 右線の削除CSS */
+@media (min-width: 1024px) {
+    .WorksItem:nth-child(3n) {
+        border-right: none;
+    }
+}
+@media (max-width: 1023px) and (min-width: 601px) {
+    .WorksItem { width: 50%; }
+    .WorksItem:nth-child(2n) { border-right: none; }
+}
+@media (max-width: 600px) {
+    .WorksItem { 
+        width: 100%; 
+        border-right: none; /* 1列の時は右線はいらない */
+    }
+}
 
 /* ============================ */
 /* ============================ */
 /* ============================ */
 /* ============================ */
 /* ============================ */
+/* To PageTop */
+.PageTop {
+    height: 50px;
+    width: 50px;
+    position: fixed;
+    right: 38px;
+    bottom: 30px;
+    background: #fff;
+    border: solid 2px #000;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+}
+
+.PageTop_Arrow {
+    height: 15px;
+    width: 15px;
+    border-top: 3px solid #000;
+    border-right: 3px solid #000;
+    transform: translateY(20%) rotate(-45deg);
+}
+
+@media (hover: hover) and (pointer: fine) {
+    .PageTop:hover, .PageTop:hover .PageTop_Arrow {
+        border-color: #3293e7;
+    }
+}
