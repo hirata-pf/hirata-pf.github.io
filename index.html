@@ -4,23 +4,35 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>平田大樹のポートフォリオサイト</title>
+    <script src="js/common.js"></script>
     <link rel="stylesheet" href="css/reset.css"/>
     <link rel="stylesheet" href="css/style.css"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&display=swap" rel="stylesheet">
 </head>
 <body>
     <header class="Header">
         <nav class="PcMenu">
-            <h1 class="logo">ここにろご</h1>
+            <h1 class="logo">
+                <a href="#">
+                    <img src="images/logo.svg" alt="" class="LogoImg">
+                </a>
+            </h1>
             <ul role="list" class="PcNavi">
-                <li><a href="#linktest1">アイテム１</a></li>
-                <li><a href="#linktest2">アイテム２</a></li>
-                <li><a href="#linktest3">アイテム３</a></li>
+                <li class="PcNavi_Item"><a href="#linktest1">Works</a></li>
+                <li class="PcNavi_Item"><a href="#linktest2">Profiles</a></li>
+                <li class="PcNavi_Item"><a href="#linktest3">Skill</a></li>
             </ul>
             <div class="HeaderEmpty"></div>
         </nav>
         <!-- SP表示-Naviここから- -->
         <nav class="SpMenu">
-            <h1 class="logo">ここにろご</h1>
+            <h1 class="logo">
+                <a href="#">
+                    <img src="images/logo.svg" alt="" class="LogoImg">
+                </a>
+            </h1>
             <button class="Button">
                 <div class="ButtonLine_Top"></div>
                 <div class="ButtonLine_Middum"></div>
@@ -42,86 +54,717 @@
     </header>
     <main>
         <!-- Mv -->
-        <section class="Mv">
+        <!-- <section class="Mv">
             <div class="MvContainer">
-              <h2 class="H2-Title">HIRATA.PF<br>HIRATA.PF</h2>
+              <h2 class="H2-Title">Graphic & Web Design<br>平田 大樹のポートフォリオサイト</h2>
+            </div>
+        </section> -->
+        <section class="Mv">
+            <div class="Mv_Slider">
+                <div class="Mv_Slide" style="background-image: url('images/Mv.jpg');"></div>
+                <div class="Mv_Slide" style="background-image: url('images/Mv02.png');"></div>
+                <div class="Mv_Slide" style="background-image: url('images/Mv03.png');"></div>
+            </div>
+
+            <div class="MvContainer">
+                <h2 class="H2-Title">Graphic & Web Design<br>平田 大樹のポートフォリオサイト</h2>
             </div>
         </section>
         <!-- OverViews -->
          <section class="OverViews">
             <div class="OverViewsContainer">
-                <p class="OverViews-tx">ここにこのサイトの概要を記載。ここにこのサイトの概要を記載。ここにこのサイトの概要を記載。ここにこのサイトの概要を記載。ここにこのサイトの概要を記載。ここにこのサイトの概要を記載。ここにこのサイトの概要を記載。ここにこのサイトの概要を記載。ここにこのサイトの概要を記載。ここにこのサイトの概要を記載。</p>
-                <img src="images/images01.PNG" alt="" class="OverViews-img">
+                <div class="OverViews_Wrapper">
+                <p class="OverViews-TxTitle">
+                    正解がないからこそ、<br>目的を大事にする。
+                </p>
+                <p class="OverViews-Tx Normal_Tx">
+                    制作に没頭する中で、つい見落としそうになる<br>
+                    「本質」に光を当て続けること。<br>
+                    関わる人すべての想いを形にし、<br>
+                    正しいゴールへと伴走するために。<br>
+                    デザインとディレクションの舵を取ってきました。
+                </p>
+                </div>
+                <img src="images/overbeiew_img.webp" alt="" class="OverViews-img">
             </div>
          </section>
          <!-- Works -->
           <section class="Works">
             <div class="WorksContainer">
-                <h3 class="WorksTitle">
+                <h3 class="WorksHeading">
                     Works
                 </h3>
                 <ul role="list" class="WorksList">
+                    <!-- 01　≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡  -->
                     <li class="WorksItem">
-                        <a href="#" class="WorksCard">
+                        <!-- クリックされるカード部分 -->
+                        <div class="WorksCard WorksCard-Slope" onclick="openModal('work01')">
                             <div class="WorksImgWrapper">
-                                <img src="images/works_photo.JPG" alt="" class="WorksImg">
+                                <img src="images/usbee_listdisplay.webp" alt="" class="WorksImg WorksImg-Slope">
                             </div>
                             <div class="WorksContent">
-                                <p class="WorksTitle">ここに作品タイトル</p>
-                                <p class="WorksTag">ここに媒体</p>
+                                <p class="WorksTitle">Usbee</p>
+                                <p class="WorksTag">サービスサイト</p>
                                 <span class="WorksArrow"></span>
                             </div>
-                        </a>
+                        </div>
+                        <!-- 隠れているポップアップ本体 -->
+                         <div id="modal-work01" class="Modal">
+                            <div class="ModalOverlay" onclick="closeModal('work01')"></div>
+                            <div class="ModalInner">
+                                <button class="ModalClose" onclick="closeModal('work01')">&times;</button>
+                                <div class="ModalBody">
+                                    <div class="Works_Contents">
+                                    <img src="images/usbee_img.png" alt="" class="ModalImg">
+                                    </div>
+                                    <h4 class="ModalTitle">Usbee</h4>
+                                    <p class="ModalTitle_lead">
+                                        【B2B】従業員向け学習・教育アプリ サービスサイト構築
+                                    </p>                 
+                                    <p class="ModalText Normal_Tx">
+                                    <strong>Overview</strong><br>
+                                    自社開発アプリのリリースに伴う、経営層や部門長をターゲットとしたサービスサイト。<br>
+                                    営業担当者がこのサイトを介してスムーズにプレゼンテーションを行える「営業支援ツール」としての役割を重視して構築しました。
+                                    </p>
+                                    <p class="ModalText Normal_Tx">
+                                    <strong>Challenge & Solution</strong><br>
+                                    アプリ開発とサイト構築が同時進行するという流動的な状況下で、散らばった情報を自ら収集・整理し、戦略的な情報の統合を遂行。<br>
+                                    関係各所との緻密な調整と上層部への合意形成を繰り返すことで、プロジェクトの「本質」を外さない一貫したメッセージを実現しました。
+                                    </p>
+                                    <p class="ModalText Normal_Tx">
+                                    <strong>Role</strong><br>
+                                    情報収集からサイト構成、デザイン、コーディングまで、全工程を一人で完結。<br>
+                                    ディレクションを含めた全領域を一気通貫で担当することで、意思疎通のズレを排除し、社内の最注力プロジェクトにふさわしいクオリティを担保しました。
+                                    </p>                                    
+                                </div>
+                            </div>
+                        </div>
                     </li>
+                    <!-- 02　≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡  -->
                     <li class="WorksItem">
-                        <a href="#" class="WorksCard">
+                        <!-- クリックされるカード部分 -->
+                        <div class="WorksCard WorksCard-Slope" onclick="openModal('work02')">
                             <div class="WorksImgWrapper">
-                                <img src="images/works_photo.JPG" alt="" class="WorksImg">
+                                <img src="images/onbording_listdisplay.webp" alt="" class="WorksImg WorksImg-Slope">
                             </div>
                             <div class="WorksContent">
-                                <p class="WorksTitle">ここに作品タイトル</p>
-                                <p class="WorksTag">ここに媒体</p>
+                                <p class="WorksTitle">オンボーディング研修</p>
+                                <p class="WorksTag">ランディングページ</p>
                                 <span class="WorksArrow"></span>
                             </div>
-                        </a>
+                        </div>
+                        <!-- 隠れているポップアップ本体 -->
+                         <div id="modal-work02" class="Modal">
+                            <div class="ModalOverlay" onclick="closeModal('work02')"></div>
+                            <div class="ModalInner">
+                                <button class="ModalClose" onclick="closeModal('work02')">&times;</button>
+                                <div class="ModalBody">
+                                    <div class="Works_Contents">
+                                    <img src="images/onbording_img.webp" alt="" class="ModalImg">
+                                    </div>
+                                    <h4 class="ModalTitle">オンボーディング研修</h4>
+                                    <p class="ModalTitle_lead">
+                                        【B2B】オンボーディングスキル向上研修 ランディングページ（LP）
+                                    </p>                 
+                                    <p class="ModalText Normal_Tx">
+                                    <strong>Overview</strong><br>
+                                    新入社員を受け入れる先輩・上司を対象とした、オンボーディング（早期立ち上げ）支援プログラムのLP。<br>
+                                    社内の新サービス展開に伴い、ターゲットに響く訴求とコンバージョン導線の設計を担当しました。
+                                    </p>
+                                    <p class="ModalText Normal_Tx">
+                                    <strong>Challenge & Solution</strong><br>
+                                    サービス開発とLP制作が同時並行で進んでいたため、度重なる方向修正やスケジュールの変動によりプロジェクトが停滞しがちな状況でした。<br>
+                                    そこで、停滞を打破するために「段階的なリリースと継続的改善」を提案。<br>
+                                    公開後はヒートマップによるユーザー行動の可視化を行い、データに基づいた情報の取捨選択とデザイン修正を繰り返すことで、ページの精度を高めていきました。
+                                    </p>
+                                    <p class="ModalText Normal_Tx">
+                                    <strong>Role</strong><br>
+                                    LPの構成・デザイン・コーディング、および公開後の運用改善を担当。<br>
+                                    当時は聞きなれない「オンボーディング」というキーワードに対し、制作の枠を超えて「どう市場に周知させるか」という集客・認知施策までを見据えた多角的な視点を養う経験となりました。</p>
+                                </div>
+                            </div>
+                        </div>
                     </li>
+                    <!-- 03　≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡  -->
                     <li class="WorksItem">
-                        <a href="#" class="WorksCard">
+                        <!-- クリックされるカード部分 -->
+                        <div class="WorksCard WorksCard-Slope" onclick="openModal('work03')">
                             <div class="WorksImgWrapper">
-                                <img src="images/works_photo.JPG" alt="" class="WorksImg">
+                                <img src="images/menhel_listdisplay.jpg" alt="" class="WorksImg WorksImg-Slope">
                             </div>
                             <div class="WorksContent">
-                                <p class="WorksTitle">ここに作品タイトル</p>
-                                <p class="WorksTag">ここに媒体</p>
+                                <p class="WorksTitle">メンタルヘルス研修</p>
+                                <p class="WorksTag">ランディングページ</p>
                                 <span class="WorksArrow"></span>
                             </div>
-                        </a>
+                        </div>
+                        <!-- 隠れているポップアップ本体 -->
+                         <div id="modal-work03" class="Modal">
+                            <div class="ModalOverlay" onclick="closeModal('work03')"></div>
+                            <div class="ModalInner">
+                                <button class="ModalClose" onclick="closeModal('work03')">&times;</button>
+                                <div class="ModalBody">
+                                    <div class="Works_Contents">
+                                    <img src="images/menhel_img.png" alt="" class="ModalImg">
+                                    </div>
+                                    <h4 class="ModalTitle">メンタルヘルス研修</h4>
+                                    <p class="ModalTitle_lead">
+                                        【【B2B】メンタルヘルス研修 サービス紹介LP
+                                    </p>                 
+                                    <p class="ModalText Normal_Tx">
+                                    <strong>Overview</strong><br>
+                                    従業員のメンタルヘルス維持と定着率向上を目的とした、管理職・先輩社員向け研修プログラムのLP。<br>
+                                    形式的な研修に留まっている企業の現状に対し、「なぜ今、この教育が必要なのか」を経営的視点から再定義するプロモーションを展開しました。
+                                    </p>
+                                    <p class="ModalText Normal_Tx">
+                                    <strong>Challenge & Solution</strong><br>
+                                    多くの企業が重要性を認識しつつも、具体的な導入メリットや未実施によるリスクを十分に把握できていないという課題がありました。<br>
+                                    そこで、メンタルヘルス不調が企業にもたらす経済的損失や、対策による組織価値の向上について徹底的なデータ調査を遂行。<br>
+                                    潜在的な悩みや導入へのハードルを浮き彫りにする構成を採用し、単なるサービス紹介を超えた「企業の危機管理と成長戦略」としてのメッセージを構築しました。
+                                    </p>
+                                    <p class="ModalText Normal_Tx">
+                                    <strong>Role</strong><br>
+                                    市場調査・データ分析に基づく構成案の策定から、デザイン、コーディングまでを一貫して担当。<br>
+                                    「本質的な理解」を促すために、論理的なデータ提示と、担当者の心理に寄り添うストーリーテリングを両立させたデザインに仕上げました。</p>
+                                </div>
+                            </div>
+                        </div>
                     </li>
+                    <!-- 04　≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡  -->
                     <li class="WorksItem">
-                        <a href="#" class="WorksCard">
+                        <!-- クリックされるカード部分 -->
+                        <div class="WorksCard WorksCard-Slope" onclick="openModal('work04')">
                             <div class="WorksImgWrapper">
-                                <img src="images/works_photo.JPG" alt="" class="WorksImg">
+                                <img src="images/kaigo_displaylist.jpg" alt="" class="WorksImg WorksImg-Slope">
                             </div>
                             <div class="WorksContent">
-                                <p class="WorksTitle">ここに作品タイトル</p>
-                                <p class="WorksTag">ここに媒体</p>
+                                <p class="WorksTitle">介護離職防止研修</p>
+                                <p class="WorksTag">Web Design</p>
                                 <span class="WorksArrow"></span>
                             </div>
-                        </a>
+                        </div>
+                        <!-- 隠れているポップアップ本体 -->
+                         <div id="modal-work04" class="Modal">
+                            <div class="ModalOverlay" onclick="closeModal('work04')"></div>
+                            <div class="ModalInner">
+                                <button class="ModalClose" onclick="closeModal('work04')">&times;</button>
+                                <div class="ModalBody">
+                                    <div class="Works_Contents">
+                                    <img src="images/kaigo_img.jpg" alt="" class="ModalImg">
+                                    </div>
+                                    <h4 class="ModalTitle">介護離職防止研修</h4>
+                                    <p class="ModalTitle_lead">
+                                        【B2B】介護離職防止研修 サービス紹介LP
+                                    </p>                 
+                                    <p class="ModalText Normal_Tx">
+                                    <strong>Overview</strong><br>
+                                    従業員の介護離職リスクを低減し、仕事と介護の両立を支援する企業向け研修プログラムのLP。<br>
+                                    法改正による企業の義務化対応だけでなく、実態を伴う「離職防止策」としての認知拡大を目的として構築しました。
+                                    </p>
+                                    <p class="ModalText Normal_Tx">
+                                    <strong>Challenge & Solution</strong><br>
+                                    介護は親の高齢化だけでなく、病気や怪我により全世代に突発的に発生し得るリスクです。<br>
+                                    調査の結果、多くの企業で制度は存在するものの利用率が極めて低く、従業員への周知不足という「形骸化」が大きな課題となっていました。<br>
+                                    構成案では、最新の統計データや法改正のポイントを整理しつつ、お堅くなりがちなテーマにおいて競合との差別化を追求。<br>
+                                    実体験を持つ専門講師の「圧倒的な権威性とリアリティ」を軸に据えることで、他社にはない説得力と安心感を訴求する構成を実現しました。
+                                    </p>
+                                    <p class="ModalText Normal_Tx">
+                                    <strong>Role</strong><br>
+                                    介護リスクの実態調査、競合分析に基づく構成立案、デザイン、コーディングを担当。<br>
+                                    制度を「知っている」状態から「活用できる」状態へ意識を変えるために、論理的なリスク提示と、信頼感のあるビジュアルの両立を図りました。</p>
+                                </div>
+                            </div>
+                        </div>
                     </li>
+                    <!-- 10　≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡  -->
                     <li class="WorksItem">
-                        <a href="#" class="WorksCard">
+                        <!-- クリックされるカード部分 -->
+                        <div class="WorksCard WorksCard-Slope" onclick="openModal('work10')">
                             <div class="WorksImgWrapper">
-                                <img src="images/works_photo.JPG" alt="" class="WorksImg">
+                                <img src="images/newemp_listdisplay.webp" alt="" class="WorksImg WorksImg-Slope">
                             </div>
                             <div class="WorksContent">
-                                <p class="WorksTitle">ここに作品タイトル</p>
-                                <p class="WorksTag">ここに媒体</p>
+                                <p class="WorksTitle">新入社員研修</p>
+                                <p class="WorksTag">Web Design</p>
                                 <span class="WorksArrow"></span>
                             </div>
-                        </a>
+                        </div>
+                        <!-- 隠れているポップアップ本体 -->
+                         <div id="modal-work10" class="Modal">
+                            <div class="ModalOverlay" onclick="closeModal('work10')"></div>
+                            <div class="ModalInner">
+                                <button class="ModalClose" onclick="closeModal('work10')">&times;</button>
+                                <div class="ModalBody">
+                                    <div class="Works_Contents">
+                                    <img src="images/newemp_img.png" alt="" class="ModalImg">
+                                    </div>
+                                    <h4 class="ModalTitle">新入社員研修</h4>
+                                    <p class="ModalTitle_lead">
+                                        【B2B】新入社員研修 サービス紹介LP
+                                    </p>                 
+                                    <p class="ModalText Normal_Tx">
+                                    <strong>Overview</strong><br>
+                                    新社会人としてのマインドセットやビジネスマナー習得を目的とした、新入社員研修プログラムのプロモーション用LP。<br>
+                                    差別化が困難な「定番の研修内容」を、いかに顧客のニーズに合致させて届けるかをテーマに構築・運用を行いました。
+                                    </p>
+                                    <p class="ModalText Normal_Tx">
+                                    <strong>Challenge & Solution</strong><br>
+                                    新入社員研修は各社で内容が似通いやすく、当初は「お客様の声」による信頼性で差別化を図る方針でした。<br>
+                                    しかし公開後、ヒートマップを用いたユーザー行動分析を実施したところ、検討者が最も注視しているのは特典や実績ではなく、「具体的な講座内容」そのものであることを特定しました。<br>
+                                    この分析結果に基づき、ファーストビューからダイレクトにカリキュラムの要点へ辿り着けるようコンテンツ構成を抜本的に再編。<br>
+                                    直感的に「何が学べるか」が伝わる情報設計へと改善を施しました。
+                                    </p>
+                                    <p class="ModalText Normal_Tx">
+                                    <strong>Role</strong><br>
+                                    LPの構成・デザイン・コーディング、および公開後のヒートマップ分析・UI改修を担当。<br>
+                                    主観や慣習に頼らず、データからユーザーの「本質的なニーズ」を導き出し、成果に直結させる運用スタイルの確立に寄与しました。
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
                     </li>
-                   
+                    <!-- 05　≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡  -->
+                    <li class="WorksItem">
+                        <!-- クリックされるカード部分 -->
+                        <div class="WorksCard WorksCard-Slope" onclick="openModal('work05')">
+                            <div class="WorksImgWrapper">
+                                <img src="images/service_flyer_displaylist.webp" alt="" class="WorksImg WorksImg-Slope">
+                            </div>
+                            <div class="WorksContent">
+                                <p class="WorksTitle">サービスチラシ</p>
+                                <p class="WorksTag">紙媒体</p>
+                                <span class="WorksArrow"></span>
+                            </div>
+                        </div>
+                        <!-- 隠れているポップアップ本体 -->
+                         <div id="modal-work05" class="Modal">
+                            <div class="ModalOverlay" onclick="closeModal('work05')"></div>
+                            <div class="ModalInner">
+                                <button class="ModalClose" onclick="closeModal('work05')">&times;</button>
+                                <div class="ModalBody">
+                                    <!-- 作品01 -->
+                                    <h4 class="ModalTitle">【B2B】eラーニングサービス「GAオンデマンド」<br>
+                                        新規獲得キャンペーンチラシ</h4>
+                                     <ul role="list" class="Works_Paper_Container">
+                                        <li class="Works_Paper_list">
+                                            <p class="Front_Back">表</p>
+                                            <img src="images/gaondemand_flyer_front.jpg" alt="" class="ModalImg ModalPapers">
+                                        </li>
+                                        <li class="Works_Paper_list">
+                                            <p class="Front_Back">裏</p>
+                                            <img src="images/gaondemand_flyer_back.jpg" alt="" class="ModalImg ModalPapers">
+                                        </li>
+                                     </ul>
+                                    <p class="ModalText Normal_Tx">
+                                    <strong>Overview</strong><br>
+                                    録画型研修動画をいつでも視聴できるeラーニングサービスの新規顧客獲得用チラシ。<br>
+                                    月3万円のシステム利用料を「0円」で提供する期間限定キャンペーンの告知を担当しました。
+                                    </p>
+                                    <p class="ModalText Normal_Tx">
+                                    <strong>Challenge & Solution</strong><br>
+                                    最大の引きとなる「0円（無料）」を最優先で視覚化し、一目でメリットが伝わるインパクト重視の構成を採用。
+                                    単なる安売りではなく、「限定100社」という希少性を掛け合わせることで、他商材へのフックとなるリード獲得（引き合い）の最大化を狙いました。
+                                    </p>
+                                    <p class="ModalText Normal_Tx">
+                                    <strong>Role</strong><br>
+                                    コンセプト立案、構成、デザインを担当。
+                                    </p>
+                                    <hr>
+                                     <!-- 作品02 -->
+                                    <h4 class="ModalTitle">【B2B】アプリ「グローイング・モバイル」<br>導入キャンペーンチラシ</h4>
+                                    
+                                     <ul role="list" class="Works_Paper_Container">
+                                        <li class="Works_Paper_list">
+                                            <p class="Front_Back">表</p>
+                                            <img src="images/gm_campaign_flyer_front.jpg" alt="" class="ModalImg ModalPapers">
+                                        </li>
+                                        <li class="Works_Paper_list">
+                                            <p class="Front_Back">裏</p>
+                                            <img src="images/gm_campaign_flyer_back.jpg" alt="" class="ModalImg ModalPapers">
+                                        </li>
+                                     </ul>
+                                    <p class="ModalText Normal_Tx">
+                                    <strong>Overview</strong><br>
+                                    企業独自の教育コンテンツを配信・管理できるモバイルアプリの新規導入キャンペーンチラシ。<br>
+                                    認知度向上とトライアル獲得のため、「2ヶ月間無料」という強力なフックを用いた販促ツールを構築しました。
+                                    </p>
+                                    <p class="ModalText Normal_Tx">
+                                    <strong>Challenge & Solution</strong><br>
+                                    「アプリ導入＝設定が難しそう」という先入観を払拭するため、親しみやすく明るいビジュアルトーンを採用。<br>
+                                    クライアントからの多大な情報掲載ニーズに対し、表面で「無料のベネフィット」を最短で伝え、裏面で「営業担当が説明しやすい詳細仕様」を整理する二段構えの構成を提案。<br>
+                                    情報の取捨選択により、初見での理解しやすさと営業現場での使い勝手を両立させました。
+                                    </p>
+                                    <p class="ModalText Normal_Tx">
+                                    <strong>Role</strong><br>
+                                    構成案の策定、グラフィックデザインを担当。
+                                    </p>
+                                     <!-- 作品03 -->
+                                    <h4 class="ModalTitle">【B2B】コミュニケーション強化研修<br>顧客向け提案型チラシ</h4>
+                                    <p class="ModalText Normal_Tx">
+                                        ここに作品の詳しい説明文を入れます。こだわったポイントや使用ツールなど、自由に記載してください。
+                                    </p>
+                                     <ul role="list" class="Works_Paper_Container">
+                                        <li class="Works_Paper_list">
+                                            <p class="Front_Back">表</p>
+                                            <img src="images/commnication_flyer_front.jpg" alt="" class="ModalImg ModalPapers">
+                                        </li>
+                                        <li class="Works_Paper_list">
+                                            <p class="Front_Back">裏</p>
+                                            <img src="images/commnication_flyer_back.jpg" alt="" class="ModalImg ModalPapers">
+                                        </li>
+                                     </ul>
+                                    <p class="ModalText Normal_Tx">
+                                    <strong>Overview</strong><br>
+                                    上司・部下間のギャップ解消をテーマとした研修サービスの案内チラシ。翌春の新入社員研修に向けた先行施策として、既存顧客へのアップセルおよびリレーション強化を目的に制作しました。
+                                    </p>
+                                    <p class="ModalText Normal_Tx">
+                                    <strong>Challenge & Solution</strong><br>
+                                    新サービス決定直後の急な案件であり、提案資料や営業トークが未整備という状況下でプロジェクトがスタート。ヒアリングを通じて営業現場のニーズを汲み取り、チラシ単体で「提案書」としての機能を果たす情報設計を施しました。掲載情報の取捨選択を徹底し、限られた紙面の中で「なぜ今、このコミュニケーション改善が次年度の採用・育成に直結するのか」という納得感のあるストーリーを構築しました。
+                                    </p>
+                                    <p class="ModalText Normal_Tx">
+                                    <strong>Role</strong><br>
+                                    ヒアリング、情報設計、構成案策定、グラフィックデザインを担当。
+                                    </p>
+                                     <!-- 作品04 -->
+                                    <h4 class="ModalTitle">飲食・サービス業向け緊急支援キャンペーンチラシ</h4>
+                                     <ul role="list" class="Works_Paper_Container">
+                                        <li class="Works_Paper_list">
+                                            <p class="Front_Back">表</p>
+                                            <img src="images/colona_flyer_front.webp" alt="" class="ModalImg ModalPapers">
+                                        </li>
+                                        <li class="Works_Paper_list">
+                                            <p class="Front_Back">裏</p>
+                                            <img src="images/colona_flyer_back.webp" alt="" class="ModalImg ModalPapers">
+                                        </li>
+                                     </ul>
+                                    <p class="ModalText Normal_Tx">
+                                    <strong>Overview</strong><br>
+                                    上司・部下間のギャップ解消をテーマとした研修サービスの案内チラシ。翌春の新入社員研修に向けた先行施策として、既存顧客へのアップセルおよびリレーション強化を目的に制作しました。
+                                    </p>
+                                    <p class="ModalText Normal_Tx">
+                                    <strong>Challenge & Solution</strong><br>
+                                    新サービス決定直後の急な案件であり、提案資料や営業トークが未整備という状況下でプロジェクトがスタート。ヒアリングを通じて営業現場のニーズを汲み取り、チラシ単体で「提案書」としての機能を果たす情報設計を施しました。掲載情報の取捨選択を徹底し、限られた紙面の中で「なぜ今、このコミュニケーション改善が次年度の採用・育成に直結するのか」という納得感のあるストーリーを構築しました。
+                                    </p>
+                                    <p class="ModalText Normal_Tx">
+                                    <strong>Role</strong><br>
+                                    ヒアリング、情報設計、構成案策定、グラフィックデザインを担当。
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <!-- 06　≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡  -->
+                    <li class="WorksItem">
+                        <!-- クリックされるカード部分 -->
+                        <div class="WorksCard WorksCard-Slope" onclick="openModal('work06')">
+                            <div class="WorksImgWrapper">
+                                <img src="images/seminer_listdisplay.webp" alt="" class="WorksImg WorksImg-Slope">
+                            </div>
+                            <div class="WorksContent">
+                                <p class="WorksTitle">セミナーチラシ</p>
+                                <p class="WorksTag">紙媒体</p>
+                                <span class="WorksArrow"></span>
+                            </div>
+                        </div>
+                        <!-- 隠れているポップアップ本体 -->
+                         <div id="modal-work06" class="Modal">
+                            <div class="ModalOverlay" onclick="closeModal('work06')"></div>
+                            <div class="ModalInner">
+                                <button class="ModalClose" onclick="closeModal('work06')">&times;</button>
+                                <div class="ModalBody">
+                                    <!-- 作品01 -->
+                                    <h4 class="ModalTitle">【B2B】人事評価制度「バトルセミナー」集客チラシ</h4>
+                                     <ul role="list" class="Works_Paper_Container">
+                                        <li class="Works_Paper_list">
+                                            <p class="Front_Back">片面</p>
+                                            <img src="images/battle_semi_flyer.jpg" alt="" class="ModalImg ModalPapers  One_Calum">
+                                        </li>
+                                     </ul>
+                                    <p class="ModalText Normal_Tx">
+                                    <strong>Overview</strong><br>
+                                    社会情勢や価値観の変化に伴う評価制度の再構築をテーマとした、経営者・人事責任者向けの対談型セミナー集客チラシ。<br>
+                                    「2社の経営者が持論をぶつけ合う」という挑戦的なコンセプトを視覚化しました。
+                                    </p>
+                                    <p class="ModalText Normal_Tx">
+                                    <strong>Challenge & Solution</strong><br>
+                                    主催者（経営層）の「既存のセミナーの枠を壊し、圧倒的なインパクトで集客したい」という強い意図を形にするため、格闘技の興行ポスターを彷彿とさせるアグレッシブなビジュアルを提案。<br>
+                                    ポージングや構図の具体イメージを伝えるため、自らモデルとなって撮影見本を作成し、経営層へのディレクションを完遂。<br>
+                                    背景デザインや構図を含め、一案に固執せず5〜6パターンの多角的なクリエイティブ案を提示することで、組織のトップが求める「熱量」と「納得感」を両立させたデザインを導き出しました。
+                                    </p>
+                                    <p class="ModalText Normal_Tx">
+                                    <strong>Role</strong><br>
+                                    コンセプトの視覚化、撮影ディレクション、グラフィックデザイン、コピーワークを担当。
+                                    </p>
+                                    <hr>
+                                    <!-- 作品02 -->
+                                    <h4 class="ModalTitle">【B2B】出版記念特別セミナー 集客チラシ</h4>
+                                     <ul role="list" class="Works_Paper_Container">
+                                        <li class="Works_Paper_list">
+                                            <p class="Front_Back">表</p>
+                                            <img src="images/book_semi_flyer_front.jpg" alt="" class="ModalImg ModalPapers">
+                                        </li>
+                                        <li class="Works_Paper_list">
+                                            <p class="Front_Back">裏</p>
+                                            <img src="images/book_semi_flyer_back.jpg" alt="" class="ModalImg ModalPapers">
+                                        </li>
+                                     </ul>
+                                    <p class="ModalText Normal_Tx">
+                                    <strong>Overview</strong><br>
+                                    弊社代表（会長）の著書出版を記念した特別限定セミナーの集客チラシ。<br>
+                                    「出版」という実績が持つ社会的信頼と権威性を最大限に引き出し、既存顧客および新規層へのブランド認知拡大を目的として制作しました。
+                                    </p>
+                                    <p class="ModalText Normal_Tx">
+                                    <strong>Challenge & Solution</strong><br>
+                                    単なるセミナー告知に留まらず、登壇者の専門性と「プレミアム感」を視覚的に表現。<br>
+                                    書籍の装丁デザインとカラーのトーン＆マナーを連動させることで、一貫したブランドイメージを構築しました。<br>
+                                    ゴールドや深い色彩を用いたゴージャスなビジュアルを施し、「この人の話を聞きたい」と思わせる期待感を醸成。集客目標の達成に向けた、品格のある販促ツールへと仕上げました。
+                                    </p>
+                                    <p class="ModalText Normal_Tx">
+                                    <strong>Role</strong><br>
+                                    コンセプト立案、構成、デザインを担当。
+                                    </p>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <!-- 07　≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡  -->
+                    <li class="WorksItem">
+                        <!-- クリックされるカード部分 -->
+                        <div class="WorksCard WorksCard-Slope" onclick="openModal('work07')">
+                            <div class="WorksImgWrapper">
+                                <img src="images/poster_displaylist.webp" alt="" class="WorksImg WorksImg-Slope">
+                            </div>
+                            <div class="WorksContent">
+                                <p class="WorksTitle">集客ポスター</p>
+                                <p class="WorksTag">紙媒体</p>
+                                <span class="WorksArrow"></span>
+                            </div>
+                        </div>
+                        <!-- 隠れているポップアップ本体 -->
+                         <div id="modal-work07" class="Modal">
+                            <div class="ModalOverlay" onclick="closeModal('work07')"></div>
+                            <div class="ModalInner">
+                                <button class="ModalClose" onclick="closeModal('work07')">&times;</button>
+                                <div class="ModalBody">
+                                    <!-- 作品01 -->
+                                    <h4 class="ModalTitle">【B2B】人事評価制度「バトルセミナー」集客チラシ</h4>
+                                     <ul role="list" class="Works_Paper_Container">
+                                        <li class="Works_Paper_list">
+                                            <p class="Front_Back"></p>
+                                            <img src="images/poster_01.jpg" alt="" class="ModalImg ModalPapers One_Calum">
+                                        </li>
+                                     </ul>
+                                    <p class="ModalText Normal_Tx">
+                                    <strong>Overview</strong><br>
+                                    社会情勢や価値観の変化に伴う評価制度の再構築をテーマとした、経営者・人事責任者向けの対談型セミナー集客チラシ。<br>
+                                    「2社の経営者が持論をぶつけ合う」という挑戦的なコンセプトを視覚化しました。
+                                    </p>
+                                    <p class="ModalText Normal_Tx">
+                                    <strong>Challenge & Solution</strong><br>
+                                    主催者（経営層）の「既存のセミナーの枠を壊し、圧倒的なインパクトで集客したい」という強い意図を形にするため、格闘技の興行ポスターを彷彿とさせるアグレッシブなビジュアルを提案。<br>
+                                    ポージングや構図の具体イメージを伝えるため、自らモデルとなって撮影見本を作成し、経営層へのディレクションを完遂。<br>
+                                    背景デザインや構図を含め、一案に固執せず5〜6パターンの多角的なクリエイティブ案を提示することで、組織のトップが求める「熱量」と「納得感」を両立させたデザインを導き出しました。
+                                    </p>
+                                    <p class="ModalText Normal_Tx">
+                                    <strong>Role</strong><br>
+                                    コンセプトの視覚化、撮影ディレクション、グラフィックデザイン、コピーワークを担当。
+                                    </p>
+                                    <hr>
+                                     <!-- 作品02 -->
+                                    <h4 class="ModalTitle">【B2B】人事評価制度「バトルセミナー」集客チラシ</h4>
+                                     <ul role="list" class="Works_Paper_Container">
+                                        <li class="Works_Paper_list">
+                                            <p class="Front_Back"></p>
+                                            <img src="images/poster_02.jpg" alt="" class="ModalImg ModalPapers One_Calum">
+                                        </li>
+                                     </ul>
+                                    <p class="ModalText Normal_Tx">
+                                    <strong>Overview</strong><br>
+                                    社会情勢や価値観の変化に伴う評価制度の再構築をテーマとした、経営者・人事責任者向けの対談型セミナー集客チラシ。<br>
+                                    「2社の経営者が持論をぶつけ合う」という挑戦的なコンセプトを視覚化しました。
+                                    </p>
+                                    <p class="ModalText Normal_Tx">
+                                    <strong>Challenge & Solution</strong><br>
+                                    主催者（経営層）の「既存のセミナーの枠を壊し、圧倒的なインパクトで集客したい」という強い意図を形にするため、格闘技の興行ポスターを彷彿とさせるアグレッシブなビジュアルを提案。<br>
+                                    ポージングや構図の具体イメージを伝えるため、自らモデルとなって撮影見本を作成し、経営層へのディレクションを完遂。<br>
+                                    背景デザインや構図を含め、一案に固執せず5〜6パターンの多角的なクリエイティブ案を提示することで、組織のトップが求める「熱量」と「納得感」を両立させたデザインを導き出しました。
+                                    </p>
+                                    <p class="ModalText Normal_Tx">
+                                    <strong>Role</strong><br>
+                                    コンセプトの視覚化、撮影ディレクション、グラフィックデザイン、コピーワークを担当。
+                                    </p>
+                                    <hr>
+                                     <!-- 作品03 -->
+                                    <h4 class="ModalTitle">【B2B】人事評価制度「バトルセミナー」集客チラシ</h4>
+                                     <ul role="list" class="Works_Paper_Container">
+                                        <li class="Works_Paper_list">
+                                            <p class="Front_Back"></p>
+                                            <img src="images/poster_genkiF_B2-2.webp" alt="" class="ModalImg ModalPapers One_Calum">
+                                        </li>
+                                     </ul>
+                                    <p class="ModalText Normal_Tx">
+                                    <strong>Overview</strong><br>
+                                    社会情勢や価値観の変化に伴う評価制度の再構築をテーマとした、経営者・人事責任者向けの対談型セミナー集客チラシ。<br>
+                                    「2社の経営者が持論をぶつけ合う」という挑戦的なコンセプトを視覚化しました。
+                                    </p>
+                                    <p class="ModalText Normal_Tx">
+                                    <strong>Challenge & Solution</strong><br>
+                                    主催者（経営層）の「既存のセミナーの枠を壊し、圧倒的なインパクトで集客したい」という強い意図を形にするため、格闘技の興行ポスターを彷彿とさせるアグレッシブなビジュアルを提案。<br>
+                                    ポージングや構図の具体イメージを伝えるため、自らモデルとなって撮影見本を作成し、経営層へのディレクションを完遂。<br>
+                                    背景デザインや構図を含め、一案に固執せず5〜6パターンの多角的なクリエイティブ案を提示することで、組織のトップが求める「熱量」と「納得感」を両立させたデザインを導き出しました。
+                                    </p>
+                                    <p class="ModalText Normal_Tx">
+                                    <strong>Role</strong><br>
+                                    コンセプトの視覚化、撮影ディレクション、グラフィックデザイン、コピーワークを担当。
+                                    </p>
+                                    <hr>
+                                     <!-- 作品04 -->
+                                    <h4 class="ModalTitle">【B2B】人事評価制度「バトルセミナー」集客チラシ</h4>
+                                     <ul role="list" class="Works_Paper_Container">
+                                        <li class="Works_Paper_list">
+                                            <p class="Front_Back"></p>
+                                            <img src="images/poster_okashio.webp" alt="" class="ModalImg ModalPapers One_Calum">
+                                        </li>
+                                     </ul>
+                                    <p class="ModalText Normal_Tx">
+                                    <strong>Overview</strong><br>
+                                    社会情勢や価値観の変化に伴う評価制度の再構築をテーマとした、経営者・人事責任者向けの対談型セミナー集客チラシ。<br>
+                                    「2社の経営者が持論をぶつけ合う」という挑戦的なコンセプトを視覚化しました。
+                                    </p>
+                                    <p class="ModalText Normal_Tx">
+                                    <strong>Challenge & Solution</strong><br>
+                                    主催者（経営層）の「既存のセミナーの枠を壊し、圧倒的なインパクトで集客したい」という強い意図を形にするため、格闘技の興行ポスターを彷彿とさせるアグレッシブなビジュアルを提案。<br>
+                                    ポージングや構図の具体イメージを伝えるため、自らモデルとなって撮影見本を作成し、経営層へのディレクションを完遂。<br>
+                                    背景デザインや構図を含め、一案に固執せず5〜6パターンの多角的なクリエイティブ案を提示することで、組織のトップが求める「熱量」と「納得感」を両立させたデザインを導き出しました。
+                                    </p>
+                                    <p class="ModalText Normal_Tx">
+                                    <strong>Role</strong><br>
+                                    コンセプトの視覚化、撮影ディレクション、グラフィックデザイン、コピーワークを担当。
+                                    </p>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <!-- 08　≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡  -->
+                    <li class="WorksItem">
+                        <!-- クリックされるカード部分 -->
+                        <div class="WorksCard WorksCard-Slope" onclick="openModal('work08')">
+                            <div class="WorksImgWrapper">
+                                <img src="images/rnn_displaylist.webp" alt="" class="WorksImg WorksImg-Slope">
+                            </div>
+                            <div class="WorksContent">
+                                <p class="WorksTitle">正社員募集サイト</p>
+                                <p class="WorksTag">Web Design</p>
+                                <span class="WorksArrow"></span>
+                            </div>
+                        </div>
+                        <!-- 隠れているポップアップ本体 -->
+                         <div id="modal-work08" class="Modal">
+                            <div class="ModalOverlay" onclick="closeModal('work08')"></div>
+                            <div class="ModalInner">
+                                <button class="ModalClose" onclick="closeModal('work08')">&times;</button>
+                                <div class="ModalBody">
+                                    <h4 class="ModalTitle Rnn_Title">生和コーポレーション</h4>
+                                    <img src="images/RNN_01.webp" alt="" class="ModalImg One_Calum">
+                                    <hr>
+                                    <h4 class="ModalTitle Rnn_Title">ベルパーク</h4>
+                                    <img src="images/RNN_02.webp" alt="" class="ModalImg One_Calum">
+                                    <hr>
+                                    <h4 class="ModalTitle Rnn_Title">ユニゾン・キャピタル株式会社</h4>
+                                    <img src="images/RNN_03.webp" alt="" class="ModalImg One_Calum">
+                                    <hr>
+                                    <h4 class="ModalTitle Rnn_Title">パスシステム</h4>
+                                    <img src="images/RNN_04.webp" alt="" class="ModalImg One_Calum">
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <!-- 09　≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡  -->
+                    <li class="WorksItem">
+                        <!-- クリックされるカード部分 -->
+                        <div class="WorksCard WorksCard-Slope" onclick="openModal('work09')">
+                            <div class="WorksImgWrapper">
+                                <img src="images/fa_listdisplay.webp" alt="" class="WorksImg WorksImg-Slope">
+                            </div>
+                            <div class="WorksContent">
+                                <p class="WorksTitle">パート・アルバイト募集サイト</p>
+                                <p class="WorksTag">Web Design</p>
+                                <span class="WorksArrow"></span>
+                            </div>
+                        </div>
+                        <!-- 隠れているポップアップ本体 -->
+                         <div id="modal-work09" class="Modal">
+                            <div class="ModalOverlay" onclick="closeModal('work09')"></div>
+                            <div class="ModalInner">
+                                <button class="ModalClose" onclick="closeModal('work09')">&times;</button>
+                                <div class="ModalBody">
+                                    <h4 class="ModalTitle Rnn_Title">Lawrys The Prime Rib</h4>
+                                    <img src="images/FA_01.webp" alt="" class="ModalImg One_Calum">
+                                    <hr>
+                                    <h4 class="ModalTitle Rnn_Title">塚田農場</h4>
+                                    <img src="images/FA_02.webp" alt="" class="ModalImg One_Calum">
+                                    <hr>
+                                    <h4 class="ModalTitle Rnn_Title">ダイヤモンドダイニング1</h4>
+                                    <img src="images/FA_03.webp" alt="" class="ModalImg One_Calum">
+                                    <hr>
+                                    <h4 class="ModalTitle Rnn_Title">ダイヤモンドダイニング2</h4>
+                                    <img src="images/FA_04.webp" alt="" class="ModalImg One_Calum">
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <!-- 11　≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡  -->
+                    <li class="WorksItem">
+                        <!-- クリックされるカード部分 -->
+                        <div class="WorksCard WorksCard-Slope" onclick="openModal('work11')">
+                            <div class="WorksImgWrapper">
+                                <img src="images/tw_displaylist.webp" alt="" class="WorksImg WorksImg-Slope">
+                            </div>
+                            <div class="WorksContent">
+                                <p class="WorksTitle">パート・アルバイト募集</p>
+                                <p class="WorksTag">フリーペーパー</p>
+                                <span class="WorksArrow"></span>
+                            </div>
+                        </div>
+                        <!-- 隠れているポップアップ本体 -->
+                         <div id="modal-work11" class="Modal">
+                            <div class="ModalOverlay" onclick="closeModal('work11')"></div>
+                            <div class="ModalInner">
+                                <button class="ModalClose" onclick="closeModal('work11')">&times;</button>
+                                <div class="ModalBody">
+                            
+                                    <img src="images/tw.webp" alt="" class="ModalImg">
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <!-- 12　≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡≡  -->
+                    <li class="WorksItem">
+                        <!-- クリックされるカード部分 -->
+                        <div class="WorksCard WorksCard-Slope" onclick="openModal('work12')">
+                            <div class="WorksImgWrapper">
+                                <img src="images/hagaki_listdisplay.webp" alt="" class="WorksImg WorksImg-Slope">
+                            </div>
+                            <div class="WorksContent">
+                                <p class="WorksTitle">DM</p>
+                                <p class="WorksTag">デザイン</p>
+                                <span class="WorksArrow"></span>
+                            </div>
+                        </div>
+                        <!-- 隠れているポップアップ本体 -->
+                         <div id="modal-work12" class="Modal">
+                            <div class="ModalOverlay" onclick="closeModal('work12')"></div>
+                            <div class="ModalInner">
+                                <button class="ModalClose" onclick="closeModal('work12')">&times;</button>
+                                <div class="ModalBody">
+                            
+                                    <img src="images/hagaki.webp" alt="" class="ModalImg">
+                                </div>
+                            </div>
+                        </div>
+                    </li>
                 </ul>
             </div>
           </section>
@@ -131,12 +774,14 @@
                 <h3 class="ProfilesTitle">
                     Profiles
                 </h3>
-                <p class="Pf_name">平田　大樹<span class="name_rub">ひらた　だいき</span></p>
-                <p class="Biography">
-                    こんな略歴こんな略歴こんな略歴こんな略歴こんな略歴こんな略歴こんな略歴こんな略歴こんな略歴こんな略歴こんな略歴こんな略歴こんな略歴こんな略歴こんな略歴こんな略歴こんな略歴こんな略歴こんな略歴こんな略歴こんな略歴こんな略歴こんな略歴こんな略歴こんな略歴こんな略歴こんな略歴こんな略歴こんな略歴こんな略歴こんな略歴こんな略歴こんな略歴こんな略歴こんな略歴こんな略歴こんな略歴こんな略歴こんな略歴こんな略歴こんな略歴
+                <p class="Pf_name">平田 大樹<span class="name_rub">ひらた だいき</span></p>
+                <p class="Biography Normal_Tx">
+                    広告代理店での10年におよぶ求人・販促広告制作を経て、B2B企業のクリエイティブ部門へ。<br>
+                    17年以上のキャリアの中で、グラフィックデザイン、写真撮影、Webサイト制作（WordPress）、SEOマーケティングと、多角的に「伝える技術」を磨いてきました。<br>
+                    現在は生成AIを用いた市場調査や分析も取り入れ、多角的な視点からプロジェクトの本質を追求。戦略的な思考と、現場で培った確かな表現力で、関わる人の想いを正しいゴールへと導きます。
                 </p>
-                <h3>スキル・ツール</h3>
-                <ul class="SkillList">
+                <h3 class="ProfilesTitle SkillTitle">スキル・ツール</h3>
+                <ul class="SkillList" role="list">
                     <li class="SkillItem">Adobe Illustrator</li>
                     <li class="SkillItem">Adobe Photo Shop</li>
                     <li class="SkillItem">Adobe Xd</li>
@@ -147,18 +792,34 @@
                     <li class="SkillItem">JavaScript</li>
                     <li class="SkillItem">Word Press</li>
                 </ul>
+                <h3 class="ProfilesTitle QualificationTitle">資格</h3>
+                <ul class="QualificationList" role="list">
+                    <li class="QualificationItem">カラーコーディネーター検定試験アドバンスクラス</li>
+                    <li class="QualificationItem">UX基礎検定（HCD検認定）</li>
+                    <li class="QualificationItem">ウェブデザイン技能検定３級</li>
+                </ul>
 
             </div>
            </section>
-
-        <div class="conts_1"></div>
-        <div class="conts_2"></div>
-        <div class="conts_3"></div>
-        <div class="conts_4" id="linktest1"></div>
-        <div class="conts_5" id="linktest2"></div>
-        <div class="conts_6" id="linktest3"></div>
+<!-- OverViews -->
+         <section class="OverViews">
+            <div class="OverViewsContainer">
+                <div class="OverViews_Wrapper">
+                <p class="OverViews-TxTitle">
+                    AIとの向き合いかた<br>
+                     ”ベストミックス”
+                </p>
+                <p class="OverViews-Tx Normal_Tx">
+                    効率化できる部分はAIを賢く活用し、<br>
+                    生まれた時間で「考えること」や「仕上げること」に深く向き合います。<br>技術に頼り切るのではなく、<br>最終的には必ず人の手と目を通す。<br>
+                    そのバランスを正しく判断することが、<br>より良い成果物へ繋がると考えています。
+                </p>
+                </div>
+                <img src="images/toAI_img.png" alt="" class="OverViews-img">
+            </div>
+         </section>
     </main>
-    <footer></footer>
+    <footer>(C)2026 Hirata Daiki</footer>
     <!-- To PageTop -->
     <a class="PageTop" href="#"><div class="PageTop_Arrow"></div></a>
 <!-- JS -->
@@ -186,6 +847,20 @@
       menu.classList.remove("MenuIsOpen");
     });
   });
+</script>
+<!-- Worksのモーダル部分のJs -->
+ <script>
+function openModal(id) {
+    document.getElementById('modal-' + id).style.display = 'block';
+    // 背景を固定してスクロールさせない
+    document.body.style.overflow = 'hidden';
+}
+
+function closeModal(id) {
+    document.getElementById('modal-' + id).style.display = 'none';
+    // スクロールを元に戻す
+    document.body.style.overflow = 'auto';
+}
 </script>
 </body>
 </html>
