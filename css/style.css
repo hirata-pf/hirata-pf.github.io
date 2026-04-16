@@ -566,6 +566,8 @@ footer {
     width: 100%; /* 例 */
     max-width: 400px; /* 例 */
     height: auto;
+    opacity: .3;
+    transition: .1s ease-out;
 }
 
 .OverViews-img_motion {
@@ -573,6 +575,7 @@ footer {
     width: 100%; /* 例 */
     max-width: 400px; /* 例 */
     height: auto;
+    
 
     /* アニメーションの設定 */
     /* 名前：spaceFloat、時間：6秒、緩急：ease-in-out、リピート：無限 */
@@ -597,4 +600,15 @@ footer {
         /* 6秒後（最後）：初期位置に戻る（これでループが繋がる） */
         transform: translateY(0) rotate(0deg);
     }
+}
+/* ==================================================================================== */
+/* FadeIN */
+.FadeIn {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 3s, transform 3s;
+}
+.FadeIn.is-show {
+    opacity: 1;
+    transform: translateY(0);
 }
