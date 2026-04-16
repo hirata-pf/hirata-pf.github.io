@@ -281,6 +281,25 @@ ul.SpNavi {
 
     }
 }
+.Underline {
+    display: inline-block;
+    position: relative;
+    &::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: 2px;
+        width: 0;
+        height: 14px;
+        background-color: #78c5a0;
+        transition: width .6s ease-out;
+        /* transition-delay: .8s; */
+        z-index: -1;
+    }
+}
+.Underline.is-show::after {
+    width: 100%;
+}
 /* ============================ */
 /* Works */
 h3.WorksHeading {
@@ -608,7 +627,14 @@ footer {
     transform: translateY(30px);
     transition: opacity 1.5s, transform 1.5s;
 }
-.FadeIn.is-show {
+.FadeIn.is-show, .FadeIn.is-show.LeftToRight {
     opacity: 1;
-    transform: translateY(0);
+    transform: translate(0, 0);
 }
+/* ========== */
+.FadeIn.LeftToRight {
+    opacity: 0;
+    transform: translateX(-30px);
+    transition: opacity .8s ease-out, transform .8s ease-out;
+}
+
