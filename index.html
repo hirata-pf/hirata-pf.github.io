@@ -12,6 +12,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&display=swap" rel="stylesheet">
 </head>
 <body>
+    <div class="Parallax_Bg"></div>
     <header class="Header">
         <nav class="PcMenu">
             <h1 class="logo">
@@ -856,6 +857,16 @@ function closeModal(id) {
     });
     targets.forEach((target) => {
         observer.observe(target);
+    });
+ </script>
+ <!-- パララックス -->
+ <script>
+    window.addEventListener('scroll', () => {
+        const scrollValue = window.pageYOffset;
+        const bgLayer = document.querySelector('.Parallax_Bg');
+        const bgSpeed = 0.2;
+        const bgPosition = scrollValue * bgSpeed;
+        bgLayer.style.backgroundPosition = `center ${-bgPosition}px`;
     });
  </script>
 </body>
