@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>平田大樹のポートフォリオサイト</title>
-    <script src="js/common.js"></script>
+    <!-- <script src="js/common.js"></script> -->
     <link rel="stylesheet" href="css/reset.css"/>
     <link rel="stylesheet" href="css/style.css"/>
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -85,7 +85,7 @@
                     デザインとディレクションの舵を取ってきました。
                 </p>
                 </div>
-                <img src="images/overbeiew_img.webp" alt="" class="OverViews-img">
+                <img src="images/overbeiew_img.webp" alt="" class="OverViews-img FadeIn">
             </div>
          </section>
          <!-- Works -->
@@ -844,14 +844,19 @@ function closeModal(id) {
     document.body.style.overflow = 'auto';
 }
 </script>
-<!-- TOPへ戻るボタンのJs -->
+<!-- FadeIN -->
  <script>
-    const ToPageTop = document.querySelector("#js-pagetop")
-    window.addEventListener ('scroll', () => {
-        if
-    }
-
-    )
+    const targets = document.querySelectorAll('.FadeIn');
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('is-show');
+            }
+        });
+    });
+    targets.forEach((target) => {
+        observer.observe(target);
+    });
  </script>
 </body>
 </html>
