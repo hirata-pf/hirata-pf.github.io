@@ -606,7 +606,7 @@ footer {
 .FadeIn {
     opacity: 0;
     transform: translateY(30px);
-    transition: opacity 3s, transform 3s;
+    transition: opacity 2s, transform 2s;
 }
 .FadeIn.is-show {
     opacity: 1;
